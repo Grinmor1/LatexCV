@@ -19,7 +19,9 @@ jobs:
         apt install --yes \
           fonts-roboto \
           fonts-adobe-sourcesans3 \
+          fontconfig \
           ;
+        fc-cache -f -v
 
     - name: Compile
       run: make
