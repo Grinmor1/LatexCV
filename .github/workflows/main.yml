@@ -18,9 +18,11 @@ jobs:
         apt update
         apt install --yes \
           fonts-roboto \
-          fonts-adobe-sourcesans3 \
           fontconfig \
+          git \
           ;
+        git clone --depth 1 https://github.com/adobe-fonts/source-sans.git /tmp/source-sans
+        cp /tmp/source-sans/OTF/*.otf /usr/local/share/fonts/
         fc-cache -f -v
 
     - name: Compile
